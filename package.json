@@ -1,10 +1,10 @@
 {
-  "name": "node-one-signal",
+  "name": "nodejs-one-signal",
   "version": "1.0.0",
   "description": "A nodejs library to interact with One Signal Notifications API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 10000 --exit"
   },
   "keywords": [
     "notifications",
@@ -15,6 +15,11 @@
   "author": "Ghaff",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "find-up": "^5.0.0",
+    "mocha": "^8.3.2"
   }
 }

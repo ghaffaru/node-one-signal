@@ -24,4 +24,15 @@ describe('One signal tests', () => {
             throw Error(err.message);
         }
     });
+
+    it ('can get add registered devices', async () => {
+        try {
+            const getAllDevicesResponse = await client.allDevices();
+
+            chai.expect(getAllDevicesResponse).to.have.property('players');
+            
+        } catch (err) {
+
+        }
+    })
 });

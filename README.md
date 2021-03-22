@@ -15,7 +15,7 @@ Add a new device
 ``` javascript
 const OneSignal = require('nodejs-one-signal');
 
-const client = new OneSignal('xxx', 'xxx');
+const client = new OneSignal('appId', 'restApiSecret');
 
 client.addDevice({
     "identifier": "ce777617da7f548fe7a9ab6febb56cf39fba6d382000c0395666288d961ee566",

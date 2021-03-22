@@ -27,8 +27,47 @@ client.addDevice({
     console.log(err);
 })
 ```
-In progress, feel free to submit PRs
 
+All subscribed devices
+``` javascript
+const client = new OneSignal('appId', 'restApiSecret');
+
+client.allDevices().then(devices => console.log(devices)).catch(err => console.log(err))
+```
+
+Send notification to one device
+``` javascript
+const client = new OneSignal('appId', 'restApiSecret');
+ fields = {
+        "headings":{
+            "en":  "Project",
+        },
+        "contents": {
+            "en": "Hello Notification"
+        },
+        "web_url": "https://blahblab.com/",
+        "mobile_url": "/chat"
+   }
+client.sendNotificationTo('####deviceToken', fields).then(response => console.log(response)).catch(err => console.log(err))
+```
+
+Visit the [doc](https://documentation.onesignal.com/reference/create-notification) to see more field keys
+
+Send notification to all devices
+``` javascript
+const client = new OneSignal('appId', 'restApiSecret');
+ fields = {
+        "headings":{
+            "en":  "Project",
+        },
+        "contents": {
+            "en": "Hello Notification"
+        },
+        "web_url": "https://blahblab.com/",
+        "mobile_url": "/chat"
+   }
+client.sendNotificationToAll(fields).then(response => console.log(response)).catch(err => console.log(response))
+```
 ## Testing
 
 ``` bash
